@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Business Reviews</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Business Reviews</h1>
+
+    <!-- Display existing reviews -->
+    <ul>
+      {% for review in reviews %}
+      <li>
+        <h3>{{ review[1] }}</h3>
+        <p>Rating: {{ review[2] }}/5</p>
+        <p>{{ review[3] }}</p>
+        <form
+          method="POST"
+          action="{{ url_for('delete_review', review_id=review[0]) }}"
+        >
+          <input type="submit" value="Delete Review" />
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Form to add a new review -->
+    <h2>Add a Review</h2>
+    <form method="POST" action="{{ url_for('add_review') }}">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required /><br />
+      <label for="rating">Rating (1-5):</label>
+      <input type="number" name="rating" min="1" max="5" required /><br />
+      <label for="comment">Comment:</label>
+      <textarea name="comment" required></textarea><br />
+      <input type="submit" value="Submit Review" />
+    </form>
+  </body>
+</html>

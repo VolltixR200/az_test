@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Profit Line Chart</title>
+    <style>
+      .chart {
+        width: 600px;
+        height: 300px;
+        border: 1px solid #ccc;
+        position: relative;
+      }
+
+      .line {
+        stroke: #3498db;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      .point {
+        fill: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="chart">
+      <!-- Define your profit data points here -->
+      <path
+        class="line"
+        d="M50,250 L100,200 L150,180 L200,150 L250,100 L300,50 L350,80 L400,120 L450,160 L500,200 L550,250"
+      ></path>
+      <circle class="point" cx="50" cy="250" r="4"></circle>
+      <circle class="point" cx="100" cy="200" r="4"></circle>
+      <circle class="point" cx="150" cy="180" r="4"></circle>
+      <circle class="point" cx="200" cy="150" r="4"></circle>
+      <circle class="point" cx="250" cy="100" r="4"></circle>
+      <circle class="point" cx="300" cy="50" r="4"></circle>
+      <circle class="point" cx="350" cy="80" r="4"></circle>
+      <circle class="point" cx="400" cy="120" r="4"></circle>
+      <circle class="point" cx="450" cy="160" r="4"></circle>
+      <circle class="point" cx="500" cy="200" r="4"></circle>
+      <circle class="point" cx="550" cy="250" r="4"></circle>
+    </svg>
+  </body>
+</html>
